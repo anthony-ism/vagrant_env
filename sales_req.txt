@@ -1,0 +1,58 @@
+sudo apt-get install git-core
+sudo apt-get update
+sudo apt-get install libcurl14-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
+sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
+wget https://phar.phpunit.de/phpunit.phar
+sudo wget https://phar.phpunit.de/phpunit.phar
+sudo chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+sudo mv phpunit.phar /usr/local/bin/phpunit
+sudo pear config-set auto_discover 1
+pear config-set auto_discover 1
+sudo apt-get install php-pear
+pear config-set auto_discover 1
+pear install pear.phpunit.de/PHPUnit
+sudo pear upgrade PEAR
+sudo pear install --force --alldeps pear.phpunit.de/PHPUnit
+sudo apt-get install php5-dev
+sudo pecl install xdebug
+sudo a2enmod rewrite
+sudo apt-get install php5-curl
+sudo apt-get install curl libcurl3 libcurl3-dev php5-curl
+sudo apt-get remove php5-mysql
+sudo apt-get install php5-mysqlnd
+sudo apt-get remove php5-mysql
+sudo apt-get install php5-mysqlnd
+sudo apt-get remove php5-mysqlnd
+sudo apt-get install php5-mysql
+sudo apt-get remove php5-mysql
+sudo apt-get install php5-mysqlnd
+sudo apt-get remove php5-mysqlnd
+sudo apt-get install php5-mysql
+sudo apt-get update
+sudo apt-get remove php5-mysql
+sudo apt-get update
+sudo apt-get install php5-mysqlnd
+sudo apt-get update
+sudo apt-get install mysql-server mysql-client
+sudo apt-get update
+sudo apt-get install php5-mysqlnd
+sudo add-apt-repository ppa:ondrej/php5
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php5
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install php5-mysqlnd
+pecl install xdebug
+sudo pecl install xdebug
+sudo apt-get install php-pear
+sudo apt-get install php5-dev
+sudo pecl install pecl_http
+sudo pecl install xdebug
+sudo apt-get install msmtp ca-certificates
+sudo pear install mail
+sudo pear install Mail_Mime
+sudo pear install Net_SMTP
+copy over crontabs
+
