@@ -10,6 +10,8 @@ Vagrant.configure("2") do |config|
     webserver.vm.network :forwarded_port, guest: 80, host: 8080
   end
 
-  config.vm.provision "puppet"
+  config.vm.provision "puppet" do |puppet|
+    puppet.module_path = "modules"
+  end
 
 end
