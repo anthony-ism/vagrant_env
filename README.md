@@ -1,7 +1,6 @@
 ## Vagrant Development Environment for ISM
 
-Requirements
-===========
+## Requirements
 
 * Virtualbox
 * Internet Connection (to download the base box)

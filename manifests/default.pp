@@ -1,3 +1,3 @@
-file { '/var/www/html':
-  ensure => link,
+file { '/tmp/test.txt':
+  ensure => file,
 }
