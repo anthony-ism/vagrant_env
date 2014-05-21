@@ -3,6 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
+  config.vm.synced_folder ".", "/vagrant"
+
   config.vm.define :webserver do |webserver|
     webserver.vm.box = "ismdev_ubuntu14"
     webserver.vm.box_url = "https://vagrantcloud.com/ubuntu/trusty64/version/1/provider/virtualbox.box"
