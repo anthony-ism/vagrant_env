@@ -2,10 +2,10 @@
 
 include pear
 
-$dependencies = [ 'libcurl14-gnutls-dev', 'libexpat1-dev',
+$dependencies = [ 'libcurl4-gnutls-dev', 'libexpat1-dev',
                   'gettext', 'libz-dev', 'libssl-dev',
-                  'build-essential', 'php-pear',
-                  'php5-dev', 'mysql-client' ]
+                  'build-essential', 'php5-dev', 'mysql-client'
+                ]
 
 package { $dependencies:
   ensure => installed,
@@ -17,7 +17,7 @@ package { 'apache2':
 
 service { 'apache2':
   ensure  => running,
-  enabled => true,
+  enable  => true,
   require => Package['apache2'],
 }
 
