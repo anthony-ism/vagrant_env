@@ -4,3 +4,22 @@
 
 * Virtualbox
 * Internet Connection (to download the base box)
+
+## Getting started
+
+Clone the repo locally
+
+  $ git clone https://github.com/jonmosco/vagrant_env.git
+
+Edit the Vagrantfile to point to you local repo:
+
+  Line 6
+  config.vm.synced_folder ".", "/vagrant"
+
+Checkout the submodules:
+
+  $ git submodule init
+
+Boot the VM:
+
+  $ vagrant up
