@@ -1,0 +1,3 @@
+[submodule "modules/pear"]
+	path = modules/pear
+	url = https://github.com/rafaelfelix/puppet-pear.git
