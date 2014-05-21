@@ -4,6 +4,7 @@
 
 * Virtualbox
 * Internet Connection (to download the base box)
+* Vagrant hosts plugin
 
 ## Getting started
 

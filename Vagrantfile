@@ -1,9 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'vagrant-hosts'
+
 Vagrant.configure("2") do |config|
 
-  config.vm.synced_folder ".", "/vagrant"
+  config.vm.synced_folder ".", "/var/www/html"
 
   config.vm.define :webserver do |webserver|
     webserver.vm.box = "ismdev_ubuntu14"
@@ -14,6 +16,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "puppet" do |puppet|
     puppet.module_path = "modules"
+  end
+
+  config.vm.provision :hosts do |provisioner|
+    provisioner.add_host '10.10.30.96', ['db01']
   end
 
 end
