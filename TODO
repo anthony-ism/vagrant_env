@@ -1,2 +1,2 @@
 * Apache mod_rewrite
-* php5
+* php5  - possibly remove php5-dev package
