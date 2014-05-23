@@ -1,11 +1,12 @@
-* Apache mod_rewrite
-  * edit apache conf so that it allows override
-    	<Directory /var/www/html/>
-  		Options Indexes FollowSymLinks MultiViews
-  		AllowOverride All
-  		Order allow,deny
-  		allow from all
-  	</Directory>
-* php5  - possibly remove php5-dev package
-* php5-mysql
-*
+* Apache mod_rewrite [DONE 5/22/14]
+* edit apache conf so that it allows override:
+
+  <Directory /var/www/html/>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+
+* php5  - possibly remove php5-dev package [DONE 5/22/14]
+* php5-mysql [DONE 5/22/14]

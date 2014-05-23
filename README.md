@@ -20,6 +20,7 @@ Edit the Vagrantfile to point to you local repo:
 Checkout the submodules:
 
   $ git submodule init
+  $ git submodule update
 
 Boot the VM:
 

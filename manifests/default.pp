@@ -4,21 +4,34 @@ include pear
 
 $dependencies = [ 'libcurl4-gnutls-dev', 'libexpat1-dev',
                   'gettext', 'libz-dev', 'libssl-dev',
-                  'build-essential', 'php5-dev', 'mysql-client'
+                  'build-essential', 'php5', 'php5-mysql',
+                  'mysql-client'
                 ]
 
 package { $dependencies:
   ensure => installed,
 }
 
-package { 'apache2':
-  ensure => present,
+# Apache configuration
+class { 'apache':
+  mpm_module => 'prefork'
 }
 
-service { 'apache2':
-  ensure  => running,
-  enable  => true,
-  require => Package['apache2'],
+class {'::apache::mod::php': }
+
+#apache::mod { 'php': }
+apache::mod { 'rewrite': }
+
+apache::vhost { 'sales.ismfast.com':
+  docroot          => '/var/www/html',
+  directories      => [
+    { path         => '/var/www/html',
+    options        => ['Indexes','FollowSymLinks','MultiViews'],
+    allow_override => 'All',
+    order          => 'Allow,Deny',
+    allow          => 'from all',
+    },
+  ],
 }
 
 pear::package { 'PEAR': }
