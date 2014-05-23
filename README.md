@@ -10,7 +10,9 @@
 
 Clone the repo locally
 
+```
   $ git clone https://github.com/jonmosco/vagrant_env.git
+```
 
 Edit the Vagrantfile to point to you local repo:
 
@@ -19,9 +21,13 @@ Edit the Vagrantfile to point to you local repo:
 
 Checkout the submodules:
 
+```
   $ git submodule init
   $ git submodule update
+```
 
 Boot the VM:
 
+```
   $ vagrant up
+```

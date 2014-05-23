@@ -19,7 +19,6 @@ class { 'apache':
 
 class {'::apache::mod::php': }
 
-#apache::mod { 'php': }
 apache::mod { 'rewrite': }
 
 apache::vhost { 'sales.ismfast.com':
@@ -53,4 +52,3 @@ cron { 'notify':
   command => 'php /var/www/sales.ismfast.com/api/app/ISM/Sales/cron/notify.php',
   user    => 'root',
 }
-
