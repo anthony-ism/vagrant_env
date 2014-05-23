@@ -17,7 +17,9 @@ Clone the repo locally
 Edit the Vagrantfile to point to you local repo:
 
   Line 6
+```ruby
   config.vm.synced_folder ".", "/vagrant"
+```
 
 Checkout the submodules:
 
