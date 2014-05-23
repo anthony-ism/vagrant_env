@@ -2,7 +2,8 @@
 
 ## Requirements
 
-* Virtualbox
+* Vagrant https://www.vagrantup.com
+* Virtualbox https://www.virtualbox.org/
 * Internet Connection (to download the base box)
 * Vagrant hosts plugin https://github.com/adrienthebo/vagrant-hosts
 
@@ -14,6 +15,12 @@ Clone the repo locally
   $ git clone https://github.com/jonmosco/vagrant_env.git
 ```
 
+Checkout the submodules:
+
+```
+  $ git submodule init
+  $ git submodule update
+```
 Edit the Vagrantfile to point to you local repo:
 
   Line 6
@@ -21,11 +28,10 @@ Edit the Vagrantfile to point to you local repo:
   config.vm.synced_folder ".", "/vagrant"
 ```
 
-Checkout the submodules:
+Install the vagrant-hosts plugin:
 
 ```
-  $ git submodule init
-  $ git submodule update
+  $ vagrant plugin install vagrant-hosts
 ```
 
 Boot the VM:
