@@ -26,3 +26,5 @@ Apache Conf*
 Vagrantfile config.vm.synced_folder ".", "/var/www"
 ------
 Apache overwrites /var/www/html/index.html
+----------
+Possibly: since hostname is set to unknown address, reverse dns lookup doesn't work 
