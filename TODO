@@ -10,3 +10,19 @@
 
 * php5  - possibly remove php5-dev package [DONE 5/22/14]
 * php5-mysql [DONE 5/22/14]
+-----
+Apache Conf* 
+  just changed AllowOverride line
+  and documentroot, and directory line to include html
+  -- ie
+  
+  DocumentRoot "/var/www/html"
+  <Directory "/var/www/html">
+     Options Indexes FollowSymLinks MultiViews
+     AllowOverride All
+     Require all granted
+   </Directory>
+------
+Vagrantfile config.vm.synced_folder ".", "/var/www"
+------
+Apache overwrites /var/www/html/index.html
