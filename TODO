@@ -23,7 +23,7 @@ Apache Conf*
      Require all granted
    </Directory>
 ------
-Vagrantfile config.vm.synced_folder ".", "/var/www"
+Vagrantfile config.vm.synced_folder ".", "/var/www" [DONE 5/29/14]
 ------
 Apache overwrites /var/www/html/index.html
 ----------
