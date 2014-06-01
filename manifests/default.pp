@@ -14,14 +14,15 @@ package { $dependencies:
 
 # Apache configuration
 class { 'apache':
-  mpm_module => 'prefork'
+  default_vhost => false,
+  mpm_module    => 'prefork'
 }
 
 class {'::apache::mod::php': }
 
 apache::mod { 'rewrite': }
 
-apache::vhost { 'default_vhost':
+apache::vhost { 'dev_ism':
   docroot          => '/var/www/html',
   directories      => [
     { path         => '/var/www/html',
