@@ -22,7 +22,8 @@ class {'::apache::mod::php': }
 
 apache::mod { 'rewrite': }
 
-apache::vhost { 'dev_ism':
+apache::vhost { 'default':
+  default_vhost    => true
   docroot          => '/var/www/html',
   directories      => [
     { path         => '/var/www/html',
