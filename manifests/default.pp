@@ -25,9 +25,9 @@ apache::mod { 'rewrite': }
 apache::vhost { 'ism':
   default_vhost    => true,
   port             => '80',
-  docroot          => '/vagrant/hmtl',
+  docroot          => '/vagrant/html',
   directories      => [
-    { path         => '/vagrant/hmtl',
+    { path         => '/vagrant/html',
     options        => ['Indexes','FollowSymLinks','MultiViews'],
     allow_override => 'All',
     order          => 'Allow,Deny',
