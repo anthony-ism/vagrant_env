@@ -56,7 +56,7 @@ cron { 'notify':
   user    => 'root',
 }
 
-file { '/var/www/html':
+file { '/var/www':
   ensure => link,
   target => '/vagrant',
   force  => true,
