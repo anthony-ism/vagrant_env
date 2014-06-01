@@ -25,7 +25,7 @@ apache::mod { 'rewrite': }
 apache::vhost { 'ism':
   default_vhost    => true,
   port             => '80',
-  docroot          => '/var/www/html',
+  docroot          => '/vagrant',
   directories      => [
     { path         => '/var/www/html',
     options        => ['Indexes','FollowSymLinks','MultiViews'],
@@ -56,9 +56,8 @@ cron { 'notify':
   user    => 'root',
 }
 
-file { '/var/www':
-  ensure  => link,
-  target  => '/vagrant',
-  force   => true,
-  require => Class['apache']
-}
+#file { '/var/www':
+#  ensure  => link,
+#  target  => '/vagrant',
+#  force   => true,
+#}
