@@ -23,7 +23,7 @@ class {'::apache::mod::php': }
 apache::mod { 'rewrite': }
 
 apache::vhost { 'default':
-  default_vhost    => true
+  default_vhost    => true,
   docroot          => '/var/www/html',
   directories      => [
     { path         => '/var/www/html',
