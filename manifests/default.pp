@@ -55,3 +55,9 @@ cron { 'notify':
   command => 'php /var/www/sales.ismfast.com/api/app/ISM/Sales/cron/notify.php',
   user    => 'root',
 }
+
+file { '/var/www/html':
+  ensure => link,
+  target => '/vagrant',
+  force  => true,
+}

@@ -5,7 +5,7 @@ require 'vagrant-hosts'
 
 Vagrant.configure("2") do |config|
 
-  config.vm.synced_folder ".", "/var/www"
+  config.vm.synced_folder ".", "/vagrant"
 
   config.vm.define :webserver do |webserver|
     webserver.vm.box = "ismdev_ubuntu14"
