@@ -14,7 +14,6 @@ package { $dependencies:
 
 # Apache configuration
 class { 'apache':
-  default_vhost => false,
   mpm_module    => 'prefork'
 }
 
@@ -22,7 +21,7 @@ class {'::apache::mod::php': }
 
 apache::mod { 'rewrite': }
 
-apache::vhost { 'default':
+apache::vhost { 'ism':
   default_vhost    => true,
   docroot          => '/var/www/html',
   directories      => [
