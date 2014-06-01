@@ -21,7 +21,7 @@ class {'::apache::mod::php': }
 
 apache::mod { 'rewrite': }
 
-apache::vhost { 'sales.ismfast.com':
+apache::vhost { 'default_vhost':
   docroot          => '/var/www/html',
   directories      => [
     { path         => '/var/www/html',
