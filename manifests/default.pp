@@ -57,7 +57,8 @@ cron { 'notify':
 }
 
 file { '/var/www':
-  ensure => link,
-  target => '/vagrant',
-  force  => true,
+  ensure  => link,
+  target  => '/vagrant',
+  force   => true,
+  require => Class['apache']
 }
