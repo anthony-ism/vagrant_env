@@ -39,3 +39,10 @@ Boot the VM:
 ```
   $ vagrant up
 ```
+
+For 32bit Windows Environments:
+
+```
+  $ git checkout windows32
+  $ vagrant up
+```
