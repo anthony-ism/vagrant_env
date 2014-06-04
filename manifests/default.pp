@@ -5,7 +5,7 @@ include pear
 $dependencies = [ 'libcurl4-gnutls-dev', 'libexpat1-dev',
                   'gettext', 'libz-dev', 'libssl-dev',
                   'build-essential', 'php5', 'php5-mysql',
-                  'mysql-client', 'php5-mysqlnd'
+                  'mysql-client', 'php5-mysqlnd', 'php5-curl'
                 ]
 
 package { $dependencies:
