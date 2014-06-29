@@ -9,8 +9,13 @@ $dependencies = [ 'libcurl4-gnutls-dev', 'libexpat1-dev',
                   'phpunit'
                 ]
 
+exec { 'apt-get update':
+  command => '/usr/bin/apt-get update',
+}
+
 package { $dependencies:
-  ensure => installed,
+  ensure  => installed,
+  require => Exec['apt-get update'],
 }
 
 # Apache configuration
