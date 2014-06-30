@@ -22,9 +22,8 @@ Vagrant.configure("2") do |config|
     provisioner.add_host '10.10.30.96', ['db01']
   end
 
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
-
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
 
 end

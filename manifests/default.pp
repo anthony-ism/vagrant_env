@@ -1,6 +1,6 @@
 # ISM Development Web Server
 
-include pear
+include ::pear
 
 $dependencies = [ 'libcurl4-gnutls-dev', 'libexpat1-dev',
                   'gettext', 'libz-dev', 'libssl-dev',
@@ -19,16 +19,16 @@ package { $dependencies:
 }
 
 # Apache configuration
-class { 'apache':
+class { '::apache':
   default_confd_files => false,
   mpm_module          => 'prefork'
 }
 
 class {'::apache::mod::php': }
 
-apache::mod { 'rewrite': }
+::apache::mod { 'rewrite': }
 
-apache::vhost { 'ism':
+::apache::vhost { 'ism':
   default_vhost    => true,
   port             => '80',
   docroot          => '/vagrant/html',
@@ -61,9 +61,3 @@ cron { 'notify':
   command => 'php /var/www/sales.ismfast.com/api/app/ISM/Sales/cron/notify.php',
   user    => 'root',
 }
-
-#file { '/var/www':
-#  ensure  => link,
-#  target  => '/vagrant',
-#  force   => true,
-#}
