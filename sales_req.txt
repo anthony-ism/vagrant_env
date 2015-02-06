@@ -1,3 +1,4 @@
+s
 sudo apt-get install git-core
 sudo apt-get update
 sudo apt-get install libcurl14-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
