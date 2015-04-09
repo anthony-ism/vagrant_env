@@ -12,7 +12,7 @@
 Clone the repo locally
 
 ```
-  $ git clone https://github.com/jonmosco/vagrant_env.git
+  $ git clone https://github.com/anthony-ism/vagrant_env.git
 ```
 
 Checkout the submodules:
