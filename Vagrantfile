@@ -8,7 +8,7 @@
 #sudo nano /etc/apache2/apache2.conf
 #add ths line somewhere in the file: Include /etc/phpmyadmin/apache.conf
 #sudo a2enmod authn_core
-#sudo /etc/init.d/apache2.conf
+#sudo service apache2 restart
 
 require 'vagrant-hosts'
 
