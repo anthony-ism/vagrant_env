@@ -23,11 +23,12 @@ Vagrant.configure("2") do |config|
   config.vm.define :webserver do |webserver|
     webserver.vm.box = "ismdev_ubuntu14"
     webserver.vm.box_url = "https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/20150609.0.10/providers/virtualbox.box"
-    webserver.vm.hostname = "devweb01.ismfast.com"
-    webserver.vm.network :forwarded_port, guest: 80, host: 8092
+    webserver.vm.hostname = "taxsystemlocalws.ismfast.com"
+    webserver.vm.network :forwarded_port, guest: 80, host: 8093
   end
 
   #config.vm.network "public_network"
+
 
   config.vm.provision "puppet" do |puppet|
     puppet.module_path = "modules"
@@ -35,6 +36,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :hosts do |provisioner|
     provisioner.add_host '10.10.21.1', ['db01']
+    provisioner.add_host '192.168.0.200', ['oscannerws']
   end
 
   config.vm.provider :virtualbox do |vb|
