@@ -19,6 +19,12 @@ Vagrant.configure("2") do |config|
         :group => "www-data",
         :mount_options => ["dmode=775,fmode=664"]
 
+  # Add php extras directory
+  config.vm.synced_folder "./php/extras", "/etc/php5/extras",id: "php-extras",
+        :owner => "root",
+        :group => "root",
+        :mount_options => ["dmode=775,fmode=664"]
+
 
   config.vm.define :webserver do |webserver|
     webserver.vm.box = "ismdev_ubuntu14"

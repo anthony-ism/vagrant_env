@@ -24,6 +24,13 @@ class { '::apache':
   mpm_module          => 'prefork'
 }
 
+# Add browscap configuration to php from php extras directory
+file {'/etc/php5/apache2/conf.d/browscap.ini':
+  ensure => present,
+  owner => root, group => root, mode => 444,
+  content => "browscap = /etc/php5/extras/full_php_browscap.ini  \n",
+}
+
 class {'::apache::mod::php': }
 
 ::apache::mod { 'rewrite': }
