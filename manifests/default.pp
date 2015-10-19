@@ -47,17 +47,3 @@ pear::package { 'PHPUnit': }
 pear::package { 'mail': }
 pear::package { 'Mail_Mime': }
 pear::package { 'Net_SMTP': }
-
-cron { 'tasknotify':
-  ensure  => present,
-  command => '/var/www/sales.ismfast.com/api/app/ISM/Sales/cron/tasknotifications.php',
-  user    => 'root',
-  hour    => 0,
-  minute  => 0
-}
-
-cron { 'notify':
-  ensure  => present,
-  command => 'php /var/www/sales.ismfast.com/api/app/ISM/Sales/cron/notify.php',
-  user    => 'root',
-}

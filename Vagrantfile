@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :hosts do |provisioner|
-    provisioner.add_host '10.10.21.1', ['db01']
+    # provisioner.add_host '10.10.21.1', ['db01']
   end
 
   config.vm.provider :virtualbox do |vb|
