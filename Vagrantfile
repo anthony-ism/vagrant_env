@@ -33,8 +33,6 @@ Vagrant.configure("2") do |config|
     webserver.vm.network :forwarded_port, guest: 80, host: 8092
   end
 
-  #config.vm.network "public_network"
-
   config.vm.provision "puppet" do |puppet|
     puppet.module_path = "modules"
   end
@@ -45,6 +43,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
 
