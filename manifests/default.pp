@@ -18,17 +18,17 @@ package { $dependencies:
   require => Exec['apt-get update'],
 }
 
-# Apache configuration
-class { '::apache':
-  default_confd_files => false,
-  mpm_module          => 'prefork'
-}
-
 # Add browscap configuration to php from php extras directory
 file {'/etc/php5/apache2/conf.d/browscap.ini':
   ensure => present,
   owner => root, group => root, mode => 444,
   content => "browscap = /etc/php5/extras/full_php_browscap.ini  \n",
+}
+
+# Apache configuration
+class { '::apache':
+  default_confd_files => false,
+  mpm_module          => 'prefork',
 }
 
 class {'::apache::mod::php': }
@@ -47,6 +47,11 @@ class {'::apache::mod::php': }
     allow          => 'from all',
     },
   ],
+}
+
+# Restart apache after configuration changes
+exec {'restart apache':
+  command => '/usr/bin/sudo /etc/init.d/apache2 restart'
 }
 
 pear::package { 'PEAR': }
